@@ -1,11 +1,58 @@
-import React from 'react'
+import React from "react";
+import styled, { ThemeProvider } from "styled-components";
 
-const Social = () => {
-    return (
-        <div>
-            Social
-        </div>
-    )
-}
+const SocialStyle = styled.div`
+  margin: 0 auto;
+  display: block;
+`;
 
-export default Social
+const SocialUl = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+`;
+
+const SocialLi = styled.li`
+  display: inline;
+  margin: 0 1em 0 0;
+`;
+
+const SocialAnchor = styled.a`
+  color: #212121;
+  text-decoration: none;
+  font-size: 1.2em;
+`;
+
+const SocialIcon = styled.i`
+  color: ${(props) => props.theme.color};
+`;
+
+const facebook = {
+  color: "#3b5998",
+};
+
+const twitter = {
+  color: "#38A1F3",
+};
+const linkedin = {
+  color: "#0e76a8",
+};
+const github = {
+  color: "#333",
+};
+
+const fb = "facebook";
+
+const Social = () => (
+    <SocialStyle>
+        <SocialUl>
+            <SocialLi>
+             <SocialAnchor href="https://www.facebook.com" target="_blank">
+              <SocialIcon className="fab fa-facebook" />
+             </SocialAnchor>
+            </SocialLi>
+        </SocialUl>
+    </SocialStyle>
+);
+
+export default Social;

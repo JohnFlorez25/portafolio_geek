@@ -1,5 +1,6 @@
 //Componente de tipo función Stateless
 import React from 'react';
+import Social from './Social';
 import {     
     AboutStyle,
     AboutAvatar,
@@ -40,7 +41,7 @@ const About = () => (
             </AboutLocation>
       </div>
       <div className="About-social">
-        Social
+       <Social />
       </div>
     </div>
   </AboutStyle>
