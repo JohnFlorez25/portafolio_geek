@@ -81,7 +81,8 @@ Puedes buscar tus fuentes favoritas en: https://fonts.google.com
 
 Vamos a añadir algunos iconos a nuestra aplicación, debemos añadir esta etiqueta <link> dentro del <head> de nuestro archivo public/index.html:
 
-```javascript<script src="https://kit.fontawesome.com/899555accf.js"></script>
+```javascript
+<script src="https://kit.fontawesome.com/899555accf.js"></script>
 ```
 
 ```css
