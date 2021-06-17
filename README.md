@@ -76,3 +76,96 @@ Más información sobre styled-components en: https://www.styled-components.com
 Una de las características de styled-components es que podemos definir los estilos de nuestros elementos sin preocuparnos por los nombres de las clases, styled-components lo hace por nosotros, además, se encarga de que nunca se repitan clases entre componentes diferentes, así nos aseguramos de que nuestros estilos se aplican sólo a los elementos que nosotros necesitamos y no tenemos errores de estilos en nuestra aplicación.
 
 Puedes buscar tus fuentes favoritas en: https://fonts.google.com
+
+## Añadiendo temas a nuestro proyecto
+
+Vamos a añadir algunos iconos a nuestra aplicación, debemos añadir esta etiqueta <link> dentro del <head> de nuestro archivo public/index.html:
+
+```javascript<script src="https://kit.fontawesome.com/899555accf.js"></script>
+```
+
+```css
+ <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+ <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
+```
+
+Más información sobre Font Awesome en: https://fontawesome.com
+Otra forma de añadir iconos de Font Awesome a nuestras aplicaciónes con React: https://fontawesome.com/how-to-…/on-the-web/using-with/react
+Crea una galería de fuentes a partir de iconos con IcoMoon: https://youtu.be/_5r4PFi8gDc
+
+## Agregando animaciones
+
+Styled Components también nos permite crear animaciones de css con keyframes, solo debemos importar la función keyframes de styled-components, crear una variable con las animaciones y añadirlas a los estilos de nuestros componentes creados con la función styled en la propiedad animation:
+
+```javascript
+import { keyframes } from 'styled-components';
+
+const move = keyframes`
+from { ... }
+to { ... }
+`;
+
+const MyComponent = styled.tag`
+animation: ${move} ... ...;
+`;
+```
+
+## Estilos globales
+Styled Components también nos permite crear estilos globales, es decir, estilos para las etiquetas generales (por ejemplo, html, body o main) o estilos reutilizables a partir de clases (por ejemplo, .d-none para ocultar componentes o .t-red para definir textos con mensajes importantes).
+
+Para esto debemos importar la función createGlobalStyle de styled-components, crear un componente con los estilos globales e incluir este componente en nuestra aplicación:
+```javascript
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+body { ... }
+`;
+
+const App = () => {
+return (
+...
+<GlobalStyle />
+...
+);
+}
+```
+
+## Hacer Responsivo el portafolio
+
+Styled Components también nos permite añadir media queries a nuestros componentes, ni siquiera debemos importar una función especial del paquete de styled-components, solo debemos escribirlas común y corriente con el resto de estilos de cada componente:
+
+```javascript
+const MyComponent = styled.tag`
+@media screen and (...) {
+...
+}
+`;
+```
+
+## Desplegando en GitHub Pages
+
+- Instalación de gh-pages: `npm install --save-dev gh-pages`
+
+- Abrimos el archivo package.json que se encuentra en nuestro proyecto y agregamos la propiedad homepage de esta manera:
+
+`"homepage":"https://yourusername.github.io/repository-name"`
+
+> Verifica tu nombre de usuario y el nombre de tu repositorio en GitHub y agrégalo debidamente en la dirección de arriba.
+
+- En el mismo archivo package.json agregamos los siguientes scripts:
+
+```javascript
+"scripts" {
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build"
+}
+`;
+```
+
+- Volvemos a nuestra terminal y ejecutamos:
+
+`npm run predeploy`
+
+- Ahora solo nos queda ejecutar el ultimo comando que es:
+
+`npm run deploy`
