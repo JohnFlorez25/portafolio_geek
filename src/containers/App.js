@@ -3,6 +3,7 @@ import Main from "../components/Main";
 import { SideBar } from "../components/SideBar";
 import Info from "../components/Info";
 import About from "../components/About.jsx";
+import Education from "../components/Education";
 
 import "../styles/App.css";
 
@@ -13,7 +14,7 @@ const App = () => {
         <About />
       </SideBar>
       <Info>
-       <h1>Acá va la información de mi super portafolio</h1>
+       <Education />
       </Info>
     </Main>
   );
