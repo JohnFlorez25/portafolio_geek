@@ -4,8 +4,9 @@ import { SideBar } from "../components/SideBar";
 import Info from "../components/Info";
 import About from "../components/About.jsx";
 import Education from "../components/Education";
-
-import "../styles/App.css";
+import Experience from "../components/Experience";
+import Certificate from "../components/Certificate";
+import Skills from '../components/Skills'
 
 const App = () => {
   return (
@@ -14,7 +15,10 @@ const App = () => {
         <About />
       </SideBar>
       <Info>
-       <Education />
+        <Education />
+        <Experience />
+        <Certificate />
+        <Skills />
       </Info>
     </Main>
   );
