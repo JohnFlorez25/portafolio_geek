@@ -1,10 +1,10 @@
 import React from 'react';
 
 //Componentes stateless retorno implicito
-const Main = (props) => (
+const Main = ( { children } )  => (
     <>
-      <h1> {props.title} </h1>
-      <h2> {props.descripcion} </h2>
+      <h1>Estoy en Main</h1>
+      { children }
     </>
 )
 
